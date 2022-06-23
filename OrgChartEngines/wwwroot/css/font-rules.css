@@ -1,0 +1,545 @@
+﻿.dropdown-toggle {
+    background-color: black;
+}
+
+
+.button {
+    border-radius: 4px;
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+
+    .button:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid #337ab7;
+    }
+
+
+.buttonSave {
+    border-radius: 4px;
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+    color: white;
+    padding: 5px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+
+    .buttonSave:hover {
+        background-color: black;
+        border: 1px solid black;
+        color: white;
+    }
+
+
+.buttonXLS {
+    border-radius: 4px;
+    background-color: #217346;
+    border: 1px solid #217346;
+    color: white;
+    padding: 5px 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+
+    .buttonXLS:hover {
+        background-color: white;
+        border: 1px solid #217346;
+        color: #217346;
+    }
+
+.buttonClean {
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ff6013;
+    color: #ff6013;
+    padding: 5px 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+    .buttonClean:hover {
+        background-color: white;
+        border: 1px solid #000;
+        color: #000;
+    }
+
+.buttonPDF {
+    border-radius: 4px;
+    background-color: none;
+    border: none;
+    color: #ff6013;
+    padding: 2px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+
+
+    .buttonPDF:hover {
+        background-color: #f4f4f4;
+        border: none;
+        color: #b21212;
+    }
+
+
+
+
+
+.buttonAdd {
+    border-radius: 4px;
+    background-color: rgb(13, 40, 127);
+    border: 1px solid black;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+
+    .buttonAdd:hover {
+        background-color: black;
+        border: 1px solid black;
+        color: white;
+    }
+
+.buttonMinus {
+    border-radius: 4px;
+    background-color: #ce3838;
+    border: 1px solid #b21212;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+
+    .buttonMinus:hover {
+        background-color: #fff;
+        border: 1px solid #ce3838;
+        color: #000;
+    }
+
+
+.powermail_fieldset {
+    width: 100%;
+    height: 340px;
+    border: 0;
+    padding: 10px 15px 0;
+    background-position: right 62px;
+    background-repeat: no-repeat;
+    background-position: 460px 15px;
+}
+
+
+.buttonInfo1 {
+    border-radius: 6px;
+    background-color: #d2d2d2;
+    border: 1px solid #318092;
+    color: #318092;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+.buttonInfo2 {
+    border-radius: 6px;
+    background-color: #4cb03b;
+    border: 1px solid #4cb03b;
+    color: white;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+    .buttonInfo2:hover {
+        background-color: #327027;
+        border: 1px solid #327027;
+        color: white;
+    }
+
+
+
+.buttonInfo3 {
+    border-radius: 6px;
+    background-color: #f47f18;
+    border: 1px solid #f47f18;
+    color: white;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+    .buttonInfo3:hover {
+        background-color: #ce6b14;
+        border: 1px solid #ce6b14;
+        color: white;
+    }
+
+
+.buttonInfo4 {
+    border-radius: 6px;
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+    color: white;
+    padding: 3px 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+    .buttonInfo4:hover {
+        background-color: #204362;
+        border: 1px solid #204362;
+        color: white;
+    }
+
+/* Line */
+.vl {
+    border-left: 4px solid #337ab7;
+    height: 250px;
+}
+
+.NumberStep {
+    width: 15% !important;
+    height: 27px !important;
+    padding: 2px 2px !important;
+    text-align: center !important;
+    color: #006dc2 !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+}
+
+
+
+.powermail_fieldset {
+    width: 100%;
+    height: 340px;
+    border: 0;
+    padding: 10px 15px 0;
+    background-position: right 62px;
+    background-repeat: no-repeat;
+    background-position: 460px 15px;
+}
+
+.powermail_fieldset {
+    background-image: url("../Content/img/bg14.png");
+}
+
+
+
+/*   HEADER */
+
+.nav-user:hover,
+.nav-user:active {
+    letter-spacing: 2px;
+    color: #006dc2;
+}
+
+.nav-user2:hover,
+.nav-user2:active {
+    color: #006dc2;
+}
+
+.card-container.card {
+    max-width: 320px;
+    padding: 50px 60px;
+}
+
+
+
+/*
+    * Card component
+    */
+.card {
+    background-color: rgba(255, 255, 255,0.8);
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+
+
+.styText {
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+    font-size: 25px;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    z-index: 1000;
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font: bold;
+}
+
+
+.styTextAlert {
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font: bold;
+}
+
+
+/*
+* Form styles
+*/
+.profile-name-card {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn.btn-signin {
+    background-color: rgb(13, 40, 127);
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+    .btn.btn-signin:hover,
+    .btn.btn-signin:active,
+    .btn.btn-signin:focus {
+        background-color: rgb(13, 40, 127);
+    }
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+    .forgot-password:hover,
+    .forgot-password:active,
+    .forgot-password:focus {
+        color: rgb(12, 97, 33);
+    }
+
+
+.centerButton {
+    margin: -20px -50px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+
+.styleHdr {
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+    font-size: 21px;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    z-index: 1000;
+    color: #ffffff;
+    background-color: #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.styleMenu {
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding-left: 0px;
+    padding-right: 20px;
+    position: relative;
+    z-index: 1000;
+    color: #000000;
+}
+
+.styleLogin {
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding-left: 0px;
+    padding-right: 20px;
+    position: relative;
+    z-index: 1000;
+    color: #000000;
+}
+
+sidebar-menu > a {
+    color: #000000;
+}
+
+.styleMainLogo {
+    position: static;
+    width: 200px;
+}
+
+.styleFooter {
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+    color: #555;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.83)
+}
+
+.sidebar-menu li > a2 {
+    position: relative;
+    color: #006dc2;
+}
+
+.sidebar-menu > li > a2 {
+    padding: 12px 5px 12px 15px;
+    display: block;
+}
+
+.sidebar-menu li > a3 {
+    position: relative;
+}
+
+.sidebar-menu > li > a3 {
+    padding: 12px 5px 12px 15px;
+    display: block;
+}
+
+
+.mainSUMM2 {
+    /*position: relative;*/
+    /*width: 100%;*/
+    height: 100%;
+    background-image: url("../Content/img/paralax.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.invoiceTorquesIndex {
+    position: relative;
+    background: #ffffff52;
+    border: 1px solid #f4f4f400;
+    padding: 20px;
+    margin: 10px 25px;
+}

@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OrgChart Weld</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/DocumentsControlCore.styles.css" asp-append-version="true" />*@
+
+    <link rel="shortcut icon" type="image/ico" href="~/img/loginFace.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <!--Calendar-->
+    <link href="~/lib/fullcalendar-3.4.0/fullcalendar.min.css" rel="stylesheet" />
+    <link href="~/lib/fullcalendar-3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+
+    <link href="~/css/font-rules.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/lib/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
+    @*<link href="~/css/Gridmvc.css" rel="stylesheet" />*@
+    <link href="~/css/AdminStyle.min.css" rel="stylesheet" />
+    <link href="~/css/AdminStyle.css" rel="stylesheet" />
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/css/jquery-ui.css" rel="stylesheet" />
+
+</head>
+<body class="sidebar-toggle sidebar-collapse">
+    <div class="wrapper">
+        <header class="main-header" style="background-color:black">
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Logo -->
+                <a href='@Url.Action("Index", "Home")' class="logo" style="background-color:black">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <img src="~/img/logoPolaris_New.png" class="user-image styleMainLogo" alt="User Image">
+                </a>
+
+                <!-- Sidebar toggle button-->
+                @*<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>*@
+                <div class="navbar-custom-menu">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="hidden-xs text-capitalize nav-user styleHdr" style="text-transform: uppercase;">Hello @User.Identity.Name!</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li role="separator" class="divider"></li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <form class="form-inline" id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                    <a class="nav-user2" style="color:black !important; padding-left:5px;" href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-chain-broken fa-lg"></i><h7>&nbsp;&nbsp;Sign Out</h7></a>
+                                    @*<button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>*@
+                                </form>
+
+                                @*using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                    {
+                                    @Html.AntiForgeryToken()
+                                    <a class="nav-user2" style="color:black !important; padding-left:5px;" href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-chain-broken fa-lg"></i><h7>&nbsp;&nbsp;Sign Out</h7></a>
+                                    }*@
+                                @*<li role="separator" class="divider"></li>
+                                    <a class="nav-user2" style="color:black !important; padding-left:5px;" href='@Url.Action("Index", "AttachmentRejecteds")'><i class="fa fa-bell fa-lg"></i><h7>&nbsp;&nbsp;Rejecteds</h7></a>*@
+                            }
+                            <li role="separator" class="divider"></li>
+                            <a class="nav-user2" style="color:black !important; padding-left:5px;" href='@Url.Action("Index", "DocumentRejects")'><i class="fa fa-bell fa-lg"></i><h7>&nbsp;&nbsp;Rejecteds</h7></a>
+                        </ul>
+                    </li>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Left side column. contains the logo and sidebar -->
+        @*<aside class="main-sidebar" style="background-color:#000000; color:#ffffff !important;">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="text-center image">
+                    </div>
+                </div>
+                <ul class="sidebar-menu styleMenu" style="text-transform: uppercase;">
+                    @{
+                        if (User.IsInRole("Administrator"))
+                        {
+                            <li class="treeview">
+                                <a href='http://10.23.112.254/Maintenance/Machines' class="navigation">
+                                    <i class="fa fa-cubes"></i> <span> Machines</span>
+                                </a>
+                            </li>
+                            <li class="treeview">
+                                <a href='http://10.23.112.254/Maintenance/Projects' class="navigation">
+                                    <i class="fa fa-file"></i> <span> Projects </span>
+                                </a>
+                            </li>
+                            <li class="treeview">
+                                <a href='http://10.23.112.254/Maintenance/Maintenances/IndexIMA' class="navigation">
+                                    <i class="fa fa-file"></i> <span> IMA </span>
+                                </a>
+                            </li>
+
+                            <li class="treeview">
+                                <a href="#" class="navigation">
+                                    <i class="fa fa-calendar"></i> <span> Maintenance </span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href='http://10.23.112.254/Maintenance/Maintenances/Calendar' class="navigation"><i class="fa fa-calendar"></i>Calendar</a></li>
+                                    <li><a href='' class="navigation"><i class="fa fa-list"></i>List Machine</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="treeview">
+                                <a href="#" class="navigation">
+                                    <i class="fa fa-users"></i> <span>Users</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href='http://10.23.112.254/Maintenance/User' class="navigation"><i class="fa fa-users"></i>Users</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href='http://10.23.112.254/ControlDocumentos' class="navigation">
+                                    <i class="fa fa-cubes"></i> <span> Estandares y <br />Procedimientos</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="treeview">
+                                <a href='http://10.23.112.254/Maintenance/Machines' class="navigation">
+                                    <i class="fa fa-cubes"></i> <span> Machines</span>
+                                </a>
+                            </li>
+                            <li class="treeview">
+                                <a href='http://10.23.112.254/Maintenance/Maintenances/IndexIMA' class="navigation">
+                                    <i class="fa fa-file"></i> <span> IMA </span>
+                                </a>
+                            </li>
+
+
+                            if (User.IsInRole("Engineer"))
+                            {
+                                <li class="treeview">
+                                    <a href='http://10.23.112.254/ControlDocumentos' class="navigation">
+                                        <i class="fa fa-cubes"></i> <span> Estandares y <br />Procedimientos</span>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    }
+
+                </ul>
+            </section>
+        </aside>*@
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+
+        <footer class="main-footer styleFooter">
+            <div class="pull-right hidden-xs">
+                <b>MONTERREY MX</b> - Maintenance
+            </div>
+            POLARIS © COPYRIGHT –
+            &copy; @DateTime.Now.Year POLARIS INDUSTRIES INC – ALL RIGHTS RESERVED
+        </footer>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!--DatePicker-->
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/DatePickerReady.js"></script>
+    <!---->
+    <script src="~/js/AdminStyle.js"></script>
+    <script src="~/js/HelpFunctions.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+
+
+    <script src="~/lib/fullcalendar-3.4.0/fullcalendar.min.js"></script>
+
+    <script src="~/lib/bootstrap-select/bootstrap-select.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

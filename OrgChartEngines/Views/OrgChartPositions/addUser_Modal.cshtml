@@ -1,0 +1,121 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add User in @ViewBag.Rol</h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="form-group row">
+            <label class="col-md-4 control-label">User</label>
+            <div class="col-md-8">
+                @Html.DropDownList("User", null, new { @class = "form-control selectpicker", @id = "dd_user", @title = "Select Users", @multiple ="multiple" , @required = "required" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 control-label">Shift</label>
+            <div class="col-md-8">
+                <select class="form-control selectpicker" id="dd_shift" title="Select Shift" name="Shift">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="btnSave" onclick="AddUser(id_position=@ViewBag.IdPosition, idrol = @ViewBag.IdRol)" class="btn buttonSave">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.selectpicker').selectpicker();
+
+    //loadInfo();
+
+    @*$('#dd_rol').on("change",function ()  {
+            var load_user = '@Url.Action("getuser", "Users")';
+            var idrol = $('#dd_rol').val();
+            $.ajax({
+                type: "POST",
+                url: load_user,
+                data: {
+                    RolId: idrol,
+                },
+                success: function (data) {
+
+                    var options = [], _options;
+                    $('#dd_user').empty();
+                    $.each(data, function (key, item) {
+                        var option = '<option value="' + item.id + '">' + item.name + '</option>';
+                        options.push(option);
+                    });
+                    _options = options.join('');
+                    $('#dd_user')[0].innerHTML = _options;
+                    $("#dd_user").selectpicker('refresh');
+
+
+                },
+                error: function (jqXHR, errorThrown) {
+
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+
+     });*@
+
+     @*$('#dd_user').on("change",function ()  {
+            var load_title = '@Url.Action("getrole", "Users")';
+            var iduser = $('#dd_user').val();
+            $.ajax({
+                type: "POST",
+                url: load_title,
+                data: {
+                    userid: iduser,
+                },
+                success: function (data) {
+
+                    if (data != null) {
+                        $('#txt_title').val('');
+                        $('#txt_title').val(data);
+                    }
+
+
+
+
+                },
+                error: function (jqXHR, errorThrown) {
+
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+
+     });
+
+    $('#dUser').click(function () {
+        if ($('#fUser').hasClass('hidden')) {
+            $('#fUser').removeClass('hidden');
+            $('#fTitle').addClass('hidden');
+            $('#iUser').empty();
+            $('#iUser').append("<i class='fa fa-minus'></i>&nbsp;Without&nbsp;User");
+        }
+        else {
+            $('#fUser').addClass('hidden');
+
+            $('#fTitle').removeClass('hidden');
+            $('#iUser').empty();
+            $('#iUser').append("<i class='fa fa-plus'></i>&nbsp;With&nbsp;User");
+        }
+    });
+
+    function loadInfo() {
+        var id = '@ViewBag.Id';
+        if (id == '0') {
+            $('#dv_SuperiorPosition').addClass('hidden');
+            $('#dd_line').val(0);
+            $('#dd_line').selectpicker('refresh'); $
+        }
+    }*@
+</script>

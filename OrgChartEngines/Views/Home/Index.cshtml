@@ -1,0 +1,856 @@
+﻿<style>
+    .wallpaperdiv {
+        width: 100%;
+        height: 100%;
+        background-image: url("../Content/img/rzr-pro-xp-4-media-28-lg.jpg");
+    }
+
+    .menudepartment {
+        background: #0089db;
+        color: white;
+    }
+
+        .menudepartment:hover {
+            background-color: #005384;
+            color: white;
+        }
+
+            .menudepartment:hover b {
+                font-size: 30px;
+            }
+</style>
+<section class="content">
+    <div class="row">
+        <section class="invoice">
+            <div class="box box-info">
+                <div class="row invoice-info">
+                    <div class="content" style="padding:2px;">
+                        <br />
+                        <div class="container-fluid justify-content-center">
+                            <div class="" id="department_menu">
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+<section modal>
+    <div class="example-modal">
+        <div id="AddPositionModal" class="modal fade" role="dialog">
+            <div class="modal-dialog" id="modalTheme" style="width:1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Position in OrgChart</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section modal>
+    <div class="example-modal">
+        <div id="editPositionModal" class="modal fade" role="dialog">
+            <div class="modal-dialog" id="modalTheme" style="width:1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit Position in OrgChart</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section modal>
+    <div class="example-modal">
+        <div id="deletePositionModal" class="modal fade" role="dialog">
+            <div class="modal-dialog" id="modalTheme" style="width:1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Delete Position in OrgChart</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="myModalSave" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add User</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+
+<section modal>
+    <div class="example-modal">
+        <div id="AddUserModal" class="modal fade" role="dialog">
+            <div class="modal-dialog" id="modalTheme" style="width:1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Position in OrgChart</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section modal>
+    <div class="example-modal">
+        <div id="editUserModal" class="modal fade" role="dialog">
+            <div class="modal-dialog" id="modalTheme" style="width:1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit Position in OrgChart</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section modal>
+    <div class="example-modal">
+        <div id="deleteUserModal" class="modal fade" role="dialog">
+            <div class="modal-dialog" id="modalTheme" style="width:1000px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Delete Position in OrgChart</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+<script type="text/javascript">
+    function manager() {
+        var html = '<tr><td colspan="6" align="center"> <b>Manager:__________________</b>  </td><td align="center"><a class="buttonInfo3" onclick="usermodal()" ><i class="fa fa-plus"></i></a></td></tr>';
+        $('#tbl_body').append(html);
+
+    }
+    function superinten() {
+        var html = '<tr>' +
+            '<td  align="center"> <b>Superintendent:_______</b> </td>' +
+            '<td  align="center"> <b>Superintendent:_______</b> </td>' +
+            '<td  align="center"> <b>Superintendent:_______</b> </td>' +
+            '<td  align="center"> <b>Superintendent:_______</b> </td>' +
+            '<td  align="center"> <b>Superintendent:_______</b> </td>' +
+            '<td  align="center"> <b>Superintendent:_______</b> </td>' +
+            '<td align="center"><a class="buttonInfo3" onclick="usermodal()"><i class="fa fa-plus"></i></a></td>' +
+            '</tr>';
+        $('#tbl_body').append(html);
+
+    }
+
+    function usermodal() {
+        $('#myModalSave').modal();
+    }
+    getDepartment();
+
+    $('#AddPositionModal').on('hidden.bs.modal', function () {
+        $('#AddPositionModal').modal('hide');
+        $('#AddPositionModal').removeData('bs.modal');
+        $('#AddPositionModal').find('.modal-content').empty();
+        //window.location.href = '@Url.Action("Index", "Home")';
+     });
+
+    $('#editPositionModal').on('hidden.bs.modal', function () {
+        $('#editPositionModal').removeData('bs.modal');
+        $('#editPositionModal').find('.modal-content').empty();
+    });
+
+    $('#deletePositionModal').on('hidden.bs.modal', function () {
+        $('#deletePositionModal').removeData('bs.modal');
+        $('#deletePositionModal').find('.modal-content').empty();
+    });
+
+    $('#AddUserModal').on('hidden.bs.modal', function () {
+        $('#AddUserModal').removeData('bs.modal');
+        $('#AddUserModal').find('.modal-content').empty();
+        //window.location.href = '@Url.Action("Index", "Home")';
+     });
+
+    $('#editUserModal').on('hidden.bs.modal', function () {
+        $('#editUserModal').removeData('bs.modal');
+        $('#editUserModal').find('.modal-content').empty();
+    });
+
+    $('#deleteUserModal').on('hidden.bs.modal', function () {
+        $('#deleteUserModal').removeData('bs.modal');
+        $('#deleteUserModal').find('.modal-content').empty();
+    });
+
+
+    function getDepartment() {
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("LoadDepartment", "Departaments")',
+            success: function (data) {
+                $.each(data, function (key, item) {
+                    var department = '<div class="small-box  col-md-6 menudepartment" onclick="getPositions(' + item.id +')" style="margin-left: 10px;margin-right: 10px; text-align: center; left: 25%">\
+                     <font size="5">\
+                        <b>'+ item.departamentName+'</b >\
+                        </font >\
+                    </div >\
+                    <div class="col-md-12 hidden" id="chart'+ item.id +'">\
+                        <input type="text" class="hidden" id="departmentId" >\
+                        <div class="row">\
+                        <div class="col-md-4" style="padding-right: 0px;">\
+                    <div class="col-sm-4 " align="center" style="background-color: #337ab7;color: white;border-right-style: solid;border-right-width: 1px;">Line 1</div>\
+                    <div class="col-sm-4 " align="center" style="background-color: #337ab7;color: white;border-right-style: solid;border-right-width: 1px;">Line 2</div>\
+                    <div class="col-sm-4 " align="center" style="background-color: #337ab7;color: white;border-right-style: solid;border-right-width: 1px;"> Line 3</div>\
+                        </div>\
+                        <div class ="col-md-4" style="padding-left: 0px;padding-right: 0px;">\
+                        <div class="col-sm-4 " align="center" style="background-color: #337ab7;color: white;border-right-style: solid;border-right-width: 1px;">Line 4</div>\
+                    <div class="col-sm-4 " align="center" style="background-color: #337ab7;color: white;border-right-style: solid;border-right-width: 1px;">Line 5</div>\
+                        <div class="col-sm-4" align="center" style="background-color: #337ab7;color: white;border-right-style: solid;border-right-width: 1px;">Line 6</div>\
+                        </div>\
+                     <div class ="col-md-4" style="padding-left: 0px;">\
+                        <div class="col-sm-4 " align="center" style="background-color: #337ab7;color: white;border-right-style: solid;border-right-width: 1px;">Upfit</div>\
+                        <div class="col-sm-4 " align="center" style="background-color: #337ab7;color: white;border-right-style: solid;border-right-width: 1px;">Line 8</div>\
+                        <div class="col-sm-4 " align="center" style="background-color: #337ab7;color: white;">Line 6 New</div>\
+                        </div>\
+                        </div>\
+                        <div id="positions'+ item.id +'" class="row" style="margin-bottom: 10px;padding-bottom: 10px; ">\
+                        </div >\
+                    </div>';
+                    $('#department_menu').append(department);
+                });
+
+            }
+        });
+    }
+
+    function getuser(idposition,idrol) {
+
+        var loaduser = '@Url.Action("getUsers", "OrgChartPositions")';
+
+        $.ajax({
+            type: "POST",
+            url: loaduser,
+            data: { positionId: idposition },
+            success: function (data) {
+                $('#userPosition' + idposition).empty();
+                if (data.length > 0)
+                {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        var user = '@Url.Action("addUser_Modal","OrgChartPositions",new { idposition = "param_idposition", idrol = "param_idrol" })';
+                        user = user.replace("param_idposition", idposition).replace("param_idrol", idrol);
+
+                        var edit = '@Url.Action("EditUser_Modal","OrgChartPositions",new { idpositionuser = "param_idpositionuser", idrol = "param_idrol", idposition = "param_idposition" })';
+                        edit = edit.replace("param_idpositionuser", data[i].idPositionUser).replace("param_idrol", idrol).replace("param_idposition", idposition);
+
+                        var del = '@Url.Action("deleteUser_Modal","OrgChartPositions",new { idpositionuser = "param_idpositionuser", idrol = "param_idrol" })';
+                        del = del.replace("param_idpositionuser", data[i].idPositionUser).replace("param_idrol", idrol);
+
+                        var userhtml = '<div class="col-md-10" style="padding-right: 0px;padding-left: 10px;">\
+                                            <b style="font-size: 12px;font-weight: 300;"><i class="fa fa-user"></i>&nbsp;&nbsp;'+ data[i].user + '&nbsp;&nbsp;&nbsp;&nbsp;</b>\
+                                        </div>\
+                                        <div class="col-md-2" style="font-size: 12px;padding-right: 0px;padding-left: 0px;">\
+                                            <a href="'+ edit + '" data-toggle="modal" data-target="#editUserModal" title="Edit "><i class="fa fa-pencil"></i></a>\
+                                            <a href="'+ del + '" data-toggle="modal" data-target="#deleteUserModal" title="Delete "><i class="fa fa-times"></i></a>\
+                                        </div>';
+                        $('#userPosition' + idposition).append(userhtml);
+                    }
+                }
+            },
+            error: function (jqXHR, errorThrown) {
+
+                console.log(loaduser + " jqXHR: " + jqXHR);
+                console.log("errorThrown: " + errorThrown);
+            }
+        });
+    }
+
+    function getPositions(id_department)
+        {
+            var load_Positions = '@Url.Action("getPosition", "OrgChartPositions")';
+
+            if ($('#chart' + id_department).hasClass('hidden')) {
+                $('#chart' + id_department).removeClass('hidden');
+                $.ajax({
+                    type: "POST",
+                    url: load_Positions,
+                    data: { departmentId: id_department},
+                    success: function (data) {
+                        $('#positions' + id_department).empty();
+                        if (data.length > 0) {
+
+                            var level = 0;
+                            var line = 0;
+                            var count = 0;
+                            var levelchart = '';
+                            var alllines = 0;
+                            var sangria = 0;
+                            for (var i = 0; i < data.length; i++) {
+
+                                if (data[i].FirstName == null) {
+                                    data[i].FirstName = '';
+                                    data[i].LastName = '';
+                                }
+                                var edit;
+                                var del;
+
+                                if (data[i].positionLevel != level)
+                                {
+                                    if (i == 0) {
+                                        //var modal = '~/OrgChartPositions/addPosition_Modal?iddepartment=' + id_department + '&level=' + data[i].positionLevel + '&id=0';
+                                        var modal = '@Url.Action("addPosition_Modal","OrgChartPositions",new { iddepartment ="param_IdDepa", level ="param_lvl", idposition=0 })';
+                                        modal = modal.replace("param_IdDepa", id_department).replace("param_lvl", data[i].positionLevel);
+                                        var plus = '<a id="addPosition" href="' + modal + '" data-toggle="modal" data-target="#AddPositionModal" class="btn btn-link fa fa-plus pull-right" title="Add Manager" style="text-decoration:none"></a>';
+                                        $('#positions' + id_department).append(plus);
+                                    }
+                                    if (data[i].superiorPosition == 0) {
+                                        levelchart = '<div class="row col-md-12 superior-' + data[i].superiorPosition + '" id="position' + data[i].superiorPosition + 'd' + id_department + '" style="margin-left: 0px;padding-left: 0px;padding-right: 0px;margin-right: 0px;" ></div>';
+                                        $('#positions' + id_department).append(levelchart);
+                                    }
+
+                                    var user = '@Url.Action("addUser_Modal","OrgChartPositions",new { idposition = "param_idposition", idrol = "param_idrol" })';
+                                    user = user.replace("param_idposition", data[i].id).replace("param_idrol", data[i].idRol);
+
+                                    modal = '@Url.Action("addPosition_Modal","OrgChartPositions",new { iddepartment ="param_IdDepa", level ="param_lvl", idposition="param_id"})';
+                                    modal = modal.replace("param_IdDepa", id_department).replace("param_lvl", data[i].positionLevel).replace("param_id", data[i].id);
+
+                                    edit = '@Url.Action("EditPosition_Modal","OrgChartPositions",new { iddepartment ="param_IdDepa", level ="param_lvl", idposition="param_id"})';
+                                    edit = edit.replace("param_IdDepa", id_department).replace("param_lvl", data[i].positionLevel).replace("param_id", data[i].id);
+
+                                    del = '@Url.Action("deletePosition_Modal","OrgChartPositions",new { iddepartment ="param_IdDepa", level ="param_lvl", idposition="param_id"})';
+                                    del = del.replace("param_IdDepa", id_department).replace("param_lvl", data[i].positionLevel).replace("param_id", data[i].id);
+
+                                    if (data[i].idLine > 0) {
+
+                                        for (var j = 0; j < i; j++) {
+                                            if (data[i].superiorPosition == data[j].id) {
+                                                if (data[j].idLine == 0) {
+                                                    levelchart = '<div class="row col-md-12" style="margin-left: 0px;margin-right: 0px;padding-right: 0px;padding-left: 0px;">\
+                                                                    <div class="col-md-4" style="padding-right: 0px;">\
+                                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln1d' + id_department + '" style=""></div>\
+                                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln2d' + id_department + '" style=""></div>\
+                                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln3d' + id_department + '" style=""></div>\
+                                                        </div>\
+                                                        <div class="col-md-4" style="padding-left: 0px;padding-right: 0px;">\
+                                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln4d' + id_department + '" style=""></div>\
+                                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln5d' + id_department + '" style=""></div>\
+                                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln6d' + id_department + '" style=""></div>\
+                                                    </div>\
+                                                    <div class="col-md-4" style="padding-left: 0px;">\
+                                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln7d' + id_department + '" style=""></div>\
+                                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln8d' + id_department + '" style=""></div>\
+                                                    <div class="col-md-4" id="position'+ data[i].superiorPosition + 'ln21d' + id_department + '" style=""></div>\
+                                                    </div>\
+                                                                </div>';
+
+                                                    $('#position' + data[i].superiorPosition + 'd' + id_department).append(levelchart);
+                                                }
+                                            }
+                                        }
+
+                                        sangria = sangria + 2;
+                                        var n = '<div class="small-box  col-md-12" id = "nodo' + data[i].id + '" style="margin-top: 6px;margin-bottom: 6px; padding-left: 4px;padding-right: 4px;background-color: #0871ce;color: white;">\
+                                            <div class=" superior-' + data[i].superiorPosition + '" onclick = "nodo(' + data[i].id + ')"  style = "margin-top: 10px; padding-left: 0px;padding-right: 0px;" >\
+                                            <div class="col-md-12" style="color: white;background-color:rgba(0, 0, 0, 0.29);padding-left: 5px;padding-right: 5px;">\
+                                                <b class="col-md-12" style="text-transform: uppercase; font-size: 11px;padding-left: 0px;padding-right: 0px;"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;'+ data[i].title + '</b>\
+                                                <div class="col-md-12" align="right" style="font-size: 12px;padding-right: 0px;padding-left: 0px;">\
+                                                        <a href="'+ edit + '" data-toggle="modal" data-target="#editPositionModal" title="Edit" ><i class="fa fa-pencil" ></i></a>\
+                                                        <a href="'+ del + '" data-toggle="modal" data-target="#deletePositionModal" id="del' + data[i].id +'" title="Delete "><i class="fa fa-trash" ></i></a>\
+                                                        <a href="'+ modal + '" data-toggle="modal" data-target="#AddPositionModal" title="Add Rol" ><i class="fa fa-plus-square" ></i></a>\
+                                                        <a href="'+ user + '" data-toggle="modal" data-target="#AddUserModal" id="us'+data[i].id+'" title="Add User" ><i class="fa fa-user-plus"></i></a>\
+                                                </div>\
+                                            </div >\
+                                                <div class="col-md-12" id="userPosition'+ data[i].id +'" style="padding-left: 0px;padding-right: 0px;margin-bottom: 4px;">\
+                                                    <div>\
+                                                        <b style="text-transform: uppercase; font-size: 11px;">'+ data[i].title + '</b>\
+                                                    </div>\
+                                                    <div>\
+                                                        <b style="font-size: 11px;">'+ data[i].FirstName + ' ' + data[i].LastName + '</b>\
+                                                    </div >\
+                                                    <div class="col-md-12" align="right" style="font-size: 20px;">\
+                                                        <a href="'+ edit + '" data-toggle="modal" data-target="#editPositionModal" title="Edit "><i class="fa fa-pencil"></i></a>\
+                                                        <a href="'+ del + '" data-toggle="modal" data-target="#deletePositionModal" title="Delete "><i class="fa fa-times"></i></a>\
+                                                        <a href="'+ modal + '" data-toggle="modal" data-target="#AddPositionModal" title="Add Rol" ><i class="fa fa-plus-square"></i></a>\
+                                                    </div>\
+                                                </div >\
+                                            </div>\
+                                            </div>\
+                                            <div class="row col-md-12 superior-' + data[i].superiorPosition + '" id = "position' + data[i].id + 'ln' + data[i].idLine + 'd' + id_department + '" style = "padding-left: ' + sangria + 'px;padding-right: 0px;margin-left: 0px;margin-right: 0px;" ></div >';
+
+                                        $('#position' + data[i].superiorPosition + 'ln' + data[i].idLine + 'd' + id_department).append(n);
+
+                                        getuser(data[i].id, data[i].idRol);
+
+                                        if (data[i].idRol == "") {
+                                            $('#us' + data[i].id).addClass('hidden');
+                                        }
+                                        //if () {
+
+                                        //}
+                                    }
+                                    else {
+                                        var n = '<div class="col-md-4"></div>\
+                                                                <div class="small-box col-md-4" onclick="nodo(' + data[i].id + ')" id="Reports" style="margin-top: 6px;margin-bottom: 6px; background-color:#0871ce ;color: white;">\
+                                                                    <div class="col-md-4" align="center" style="align-items:center;font-size: 50px;">\
+                                                                        <i class="fa fa-users" style="font-size:50px;"></i>\
+                                                                    </div>\
+                                                                    <div class="col-md-8" align="center" style="align-items:center;">\
+                                                                        <div class=" col-md-12" style="color: white;background-color: rgba(0, 0, 0, 0.29);border-bottom: 2px solid #006dc2;padding-left: 5px;padding-right: 5px;">\
+                                                                            <b class="col-md-12" style="text-transform: uppercase; font-size: 18px;padding-left: 0px;padding-right: 0px;">'+ data[i].title + '</b>\
+                                                                            <div class="col-md-12" align="right" style="font-size: 18px;padding-right: 0px;padding-left: 0px;">\
+                                                                                    <a href="'+ edit + '" data-toggle="modal" data-target="#editPositionModal" title="Edit" ><i class="fa fa-pencil"></i></a>\
+                                                                                    <a href="'+ del + '" data-toggle="modal" data-target="#deletePositionModal" id="del' + data[i].id +'" title="Delete "><i class="fa fa-trash" ></i></a>\
+                                                                                    <a href="'+ modal + '" data-toggle="modal" data-target="#AddPositionModal" title="Add Rol" ><i class="fa fa-plus-square" ></i></a>\
+                                                                                    <a href="'+ user + '" data-toggle="modal" data-target="#AddUserModal" id="us' + data[i].id +'" title="Add User" ><i class="fa fa-user-plus" ></i></a>\
+                                                                            </div>\
+                                                                        </div>\
+                                                                        <div class="col-md-12" id="userPosition'+ data[i].id + '" style="padding-left: 0px;padding-right: 0px;margin-bottom: 4px;">\
+                                                                        </div>\
+                                                                    </div>\
+                                                                </div>\
+                                                                <div class="col-md-4"></div>\
+                                                                <div class="col-md-12" id ="position'+ data[i].id + 'd' + id_department + '" style="padding-left: 0px;padding-right: 0px;"></div>';
+                                        $('#position' + data[i].superiorPosition + 'd' + id_department).append(n);
+                                        getuser(data[i].id, data[i].idRol);
+                                        //level = data[i].positionLevel;
+                                        if (data[i].idRol == "") {
+                                            $('#us' + data[i].id).addClass('hidden');
+                                        }
+                                    }
+                                    level = data[i].positionLevel;
+                                }
+                                else {
+
+                                    user = '@Url.Action("addUser_Modal","OrgChartPositions",new { idposition = "param_idposition", idrol = "param_idrol" })';
+                                    user = user.replace("param_idposition", data[i].id).replace("param_idrol", data[i].idRol);
+
+                                    modal = '@Url.Action("addPosition_Modal","OrgChartPositions",new { iddepartment ="param_IdDepa", level ="param_lvl", idposition="param_id"})';
+                                    modal = modal.replace("param_IdDepa", id_department).replace("param_lvl", data[i].positionLevel).replace("param_id", data[i].id);
+
+                                    edit = '@Url.Action("EditPosition_Modal","OrgChartPositions",new { iddepartment ="param_IdDepa", level ="param_lvl", idposition="param_id"})';
+                                    edit = edit.replace("param_IdDepa", id_department).replace("param_lvl", data[i].positionLevel).replace("param_id", data[i].id);
+
+                                    del = '@Url.Action("deletePosition_Modal","OrgChartPositions",new { iddepartment ="param_IdDepa", level ="param_lvl", idposition="param_id"})';
+                                    del = del.replace("param_IdDepa", id_department).replace("param_lvl", data[i].positionLevel).replace("param_id", data[i].id);
+
+                                    if (data[i].idLine > 0) {
+                                        //var n = '<div class="small-box bg-aqua-active col-md-12" id = "nodo' + data[i].id + '" style="margin-top: 10px; border-color: darkblue;border-bottom-style: solid;border-bottom-width: 0px;border-right-width: 1px;border-right-style: solid;border-left-width: 1px;border-left-style: solid;">\
+                                        //    <div class=" superior-' + data[i].superiorPosition + '" onclick = "nodo(' + data[i].id + ')"  style = "margin-top: 10px; padding-left: 0px;padding-right: 0px;border-color: darkblue;border-bottom-style: solid;border-bottom-width: 0px;border-right-width: 1px;border-right-style: solid;border-left-width: 1px;border-left-style: solid;" >\
+                                        //        <div class="col-md-4" align="center" style="align-items:center;font-size: 0px;">\
+                                        //            <i class="fa fa-user" style="font-size:80px;"></i>\
+                                        //        </div>\
+                                        //        <div class=" col-md-8">\
+                                        //            <div>\
+                                        //                <b style="text-transform: uppercase; font-size: 15px;">'+ data[i].title + '</b>\
+                                        //            </div>\
+                                        //            <div>\
+                                        //                <b style="font-size: 13px;">'+ data[i].FirstName + ' ' + data[i].LastName + '</b>\
+                                        //            </div >\
+                                        //            <div class="col-md-12" align="right" style="font-size: 20px;">\
+                                        //                <a href="'+ edit + '" data-toggle="modal" data-target="#editPositionModal" title="Edit "><i class="fa fa-pencil"></i></a>\
+                                        //                <a href="'+ del + '" data-toggle="modal" data-target="#deletePositionModal" title="Delete "><i class="fa fa-times"></i></a>\
+                                        //                <a href="'+ modal + '" data-toggle="modal" data-target="#AddPositionModal" title="Add " ><i class="fa fa-plus-square"></i></a>\
+                                        //            </div>\
+                                        //            </div >\
+                                        //        </div>\
+                                        //    </div>\
+                                        //    <div class="row col-md-12 superior-' + data[i].superiorPosition + '" id="position' + data[i].id + 'ln' + data[i].idLine + 'd' + id_department +'" style="padding-left: 0px;padding-right: 0px;margin-left: 0px;margin-right: 0px;"></div>';
+
+                                        //$('#position' + data[i].superiorPosition + 'ln' + data[i].idLine  + 'd' + id_department).append(n);
+
+                                        var n = '<div class="small-box  col-md-12" id = "nodo' + data[i].id + '" style="margin-top: 6px;margin-bottom: 6px; padding-left: 4px;padding-right: 4px;background-color: #0871ce;color: white;">\
+                                            <div class=" superior-' + data[i].superiorPosition + '" onclick = "nodo(' + data[i].id + ')"  style = "margin-top: 10px; padding-left: 0px;padding-right: 0px;" >\
+                                            <div class="col-md-12" style="color: white;background-color:rgba(0, 0, 0, 0.29);border-bottom: 2px solid #006dc2;padding-left: 5px;padding-right: 5px;">\
+                                                <b class="col-md-12" style="text-transform: uppercase; font-size: 11px;padding-left: 0px;padding-right: 0px;"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;'+ data[i].title + '</b>\
+                                                <div class="col-md-12" align="right" style="font-size: 12px;padding-right: 0px;padding-left: 0px;">\
+                                                        <a href="'+ edit + '" data-toggle="modal" data-target="#editPositionModal" title="Edit" ><i class="fa fa-pencil"></i></a>\
+                                                        <a href="'+ del + '" data-toggle="modal" data-target="#deletePositionModal" id="del' + data[i].id +'" title="Delete "><i class="fa fa-trash" ></i></a>\
+                                                        <a href="'+ modal + '" data-toggle="modal" data-target="#AddPositionModal" title="Add Rol" ><i class="fa fa-plus-square" ></i></a>\
+                                                        <a href="'+ user + '" data-toggle="modal" data-target="#AddUserModal" id="us' + data[i].id +'" title="Add User" ><i class="fa fa-user-plus" ></i></a>\
+                                                </div>\
+                                            </div >\
+                                                <div class="col-md-12" id="userPosition'+ data[i].id + '" style="padding-left: 0px;padding-right: 0px;margin-bottom: 4px;">\
+                                                    <div>\
+                                                        <b style="text-transform: uppercase; font-size: 11px;">'+ data[i].title + '</b>\
+                                                    </div>\
+                                                    <div>\
+                                                        <b style="font-size: 11px;">'+ data[i].FirstName + ' ' + data[i].LastName + '</b>\
+                                                    </div >\
+                                                    <div class="col-md-12" align="right" style="font-size: 20px;">\
+                                                        <a href="'+ edit + '" data-toggle="modal" data-target="#editPositionModal" title="Edit "><i class="fa fa-pencil"></i></a>\
+                                                        <a href="'+ del + '" data-toggle="modal" data-target="#deletePositionModal" title="Delete "><i class="fa fa-times"></i></a>\
+                                                        <a href="'+ modal + '" data-toggle="modal" data-target="#AddPositionModal" title="Add Rol" ><i class="fa fa-plus-square"></i></a>\
+                                                    </div>\
+                                                </div >\
+                                            </div>\
+                                            </div>\
+                                            <div class="row col-md-12 superior-' + data[i].superiorPosition + '" id = "position' + data[i].id + 'ln' + data[i].idLine + 'd' + id_department + '" style = "padding-left: ' + sangria + 'px;padding-right: 0px;margin-left: 0px;margin-right: 0px;" ></div >';
+
+                                        $('#position' + data[i].superiorPosition + 'ln' + data[i].idLine + 'd' + id_department).append(n);
+
+                                        getuser(data[i].id, data[i].idRol);
+
+                                        if (data[i].idRol == "") {
+                                            $('#us' + data[i].id).addClass('hidden');
+                                        }
+
+                                    }
+                                    else {
+
+                                        var n = '<div class="col-md-4"></div>\
+                                                                <div class="small-box col-md-4" onclick="nodo(' + data[i].id + ')" id="Reports" style="margin-top: 6px;margin-bottom: 6px; background-color:#0871ce ;color: white;">\
+                                                                    <div class="col-md-4" align="center" style="align-items:center;font-size: 50px;">\
+                                                                        <i class="fa fa-users" style="font-size:50px;"></i>\
+                                                                    </div>\
+                                                                    <div class="col-md-8" align="center" style="align-items:center;">\
+                                                                        <div class=" col-md-12" style="color: white;background-color: rgba(0, 0, 0, 0.29);border-bottom: 2px solid #006dc2;padding-left: 5px;padding-right: 5px;">\
+                                                                            <b class="col-md-12" style="text-transform: uppercase; font-size: 18px;padding-left: 0px;padding-right: 0px;">'+ data[i].title + '</b>\
+                                                                            <div class="col-md-12" align="right" style="font-size: 18px;padding-right: 0px;padding-left: 0px;">\
+                                                                                    <a href="'+ edit + '" data-toggle="modal" data-target="#editPositionModal" title="Edit" ><i class="fa fa-pencil"></i></a>\
+                                                                                    <a href="'+ del + '" data-toggle="modal" data-target="#deletePositionModal" id="del' + data[i].id + '" title="Delete "><i class="fa fa-trash" ></i></a>\
+                                                                                    <a href="'+ modal + '" data-toggle="modal" data-target="#AddPositionModal" title="Add Rol" ><i class="fa fa-plus-square" ></i></a>\
+                                                                                    <a href="'+ user + '" data-toggle="modal" data-target="#AddUserModal" id="us' + data[i].id + '" title="Add User" ><i class="fa fa-user-plus" ></i></a>\
+                                                                            </div>\
+                                                                        </div>\
+                                                                        <div class="col-md-12" id="userPosition'+ data[i].id + '" style="padding-left: 0px;padding-right: 0px;margin-bottom: 4px;">\
+                                                                        </div>\
+                                                                    </div>\
+                                                                </div>\
+                                                                <div class="col-md-4"></div>\
+                                                                <div class="col-md-12" id ="position'+ data[i].id + 'd' + id_department + '" style="padding-left: 0px;padding-right: 0px;"></div>';
+                                        $('#position' + data[i].superiorPosition + 'd' + id_department).append(n);
+                                        getuser(data[i].id, data[i].idRol);
+                                        if (data[i].idRol == "") {
+                                            $('#us' + data[i].id).addClass('hidden');
+                                        }
+                                        //level = data[i].positionLevel;
+                                    }
+
+
+                                }
+
+                            }
+                        }
+                        else {
+                            $('#chart').removeClass('hidden');
+                            //var modal = '/OrgChartPositions/addPosition_Modal?iddepartment=' + id_department + '&level=1&id=0';
+
+                            var modal = '@Url.Action("addPosition_Modal","OrgChartPositions",new { iddepartment ="param_IdDepa", level =1, idposition=0})';
+                            modal = modal.replace("param_IdDepa", id_department);
+
+                        var levels = '<div class="row" align="center">\
+                            <input type="text" value="1" class="hidden" id="level[1]">\
+                                <a id="addPosition" href="'+ modal + '" data-toggle="modal" data-target="#AddPositionModal"  class="buttonInfo3" title="Add User" style="text-decoration:none">Add Manager <i class="fa fa-plus"></i></a>\
+                                </div >';
+                            $('#positions' + id_department).append(levels);
+                        }
+                    },
+                    error: function (jqXHR, errorThrown) {
+
+                        console.log(load_position + " jqXHR: " + jqXHR);
+                        console.log("errorThrown: " + errorThrown);
+                    }
+                });
+            }
+            else {
+                $('#chart' + id_department).addClass('hidden');
+                $('#positions' + id_department).empty();
+            }
+
+
+        }
+        
+
+        $('#dd_user').on("change",
+        function ()  {
+            var load_title = '@Url.Action("getrole", "AspNetUsers")';
+            var iduser = $('#dd_user').val();
+            $.ajax({
+                type: "POST",
+                url: load_title,
+                data: {
+                    userid: iduser,
+                },
+                success: function (data) {
+
+                    if (data != null) {
+                        $('#txt_title').val('');
+                        $('#txt_title').val(data);
+                    }
+                },
+                error: function (jqXHR, errorThrown) {
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+        });
+
+        function nodo(id) {
+            if ($('.superior-' + id).hasClass('hidden')) {
+                $('.superior-' + id ).removeClass('hidden');
+            }
+            else {
+                $('.superior-' + id).addClass('hidden');
+            }
+        }
+
+        function AddPosition(id_department,level) {
+            var load_Positions = '@Url.Action("addPosition", "OrgChartPositions")';
+            var idrol = $('#dd_rol').val()
+            var idline = $('#dd_line').val();
+            var title = $('#txt_title').val();
+            var supPosition = $('#dd_superiorPosition').val();
+            if (supPosition == '') {
+                supPosition = 0;
+            }
+            $.ajax({
+                type: "POST",
+                url: load_Positions,
+                data: {
+                    title: title,
+                    departmentId: id_department,
+                    rolid: idrol,
+                    lineid: idline,
+                    positionlevel: level,
+                    SuperiorPosition: supPosition,
+                },
+                success: function (data) {
+                    if (data == 1) {
+                        $('#AddPositionModal').modal('hide');
+                        toastr.success("Position Added!");
+                        //getPositionsChart(id_department);
+                        $('#chart' + id_department).addClass('hidden');
+                        getPositions(id_department);
+                    }
+                },
+                error: function (jqXHR, errorThrown) {
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+
+        }
+
+        function editPosition(id_department,level,id) {
+            var edit_Positions = '@Url.Action("editPosition", "OrgChartPositions")';
+            //var id_department = $('#departmentId').val();
+            var idrol = $('#dd_rol').val();
+            var idline = $('#dd_line').val();
+            var title = $('#txt_title').val();
+            var supPosition = $('#dd_superiorPosition').val();
+            if (supPosition == '') {
+                supPosition = 0;
+            }
+            //var level = $('#level[1]').val();
+            $.ajax({
+                type: "POST",
+                url: edit_Positions,
+                data: {
+                    id: id,
+                    title: title,
+                    departmentId: id_department,
+                    rolid: idrol,
+                    lineid: idline,
+                    positionlevel: level,
+                    SuperiorPosition: supPosition,
+                },
+                success: function (data) {
+
+                    if (data == 1) {
+
+                        $('#editPositionModal').modal('hide');
+                        toastr.success("Position modified!");
+                        $('#chart' + id_department).addClass('hidden');
+                        getPositions(id_department);
+
+                    }
+
+
+
+
+                },
+                error: function (jqXHR, errorThrown) {
+
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+
+        }
+
+        function deletePosition(id_department,id) {
+            var delete_Positions = '@Url.Action("deletePosition", "OrgChartPositions")';
+
+            $.ajax({
+                type: "POST",
+                url: delete_Positions,
+                data: {
+                    id: id,
+                },
+                success: function (data) {
+                    if (data == 1) {
+                        $('#deletePositionModal').modal('hide');
+                        toastr.success("Position deleted!");
+                        $('#chart' + id_department).addClass('hidden');
+                        getPositions(id_department);
+                    }
+                },
+                error: function (jqXHR, errorThrown) {
+
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+
+        }
+
+
+        function AddUser(id_position,idrol) {
+            var load_Users = '@Url.Action("addUser", "OrgChartPositions")';
+
+            var iduser = $('#dd_user').val();
+            var idshift = $('#dd_shift').val();
+
+            $.ajax({
+                type: "POST",
+                url: load_Users,
+                data: {
+                    positionId: id_position,
+                    userid: iduser,
+                    shiftid: idshift,
+                },
+                success: function (data) {
+
+                    if (data == 1) {
+
+                        $('#AddUserModal').modal('hide');
+                        toastr.success("Users Added!");
+                        //getPositionsChart(id_department);
+                        //$('#chart' + id_department).addClass('hidden');
+                        getuser(id_position, idrol);
+
+                    }
+                },
+                error: function (jqXHR, errorThrown) {
+
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+
+        }
+
+        function editUser(id_positionUser, id_position,idrol) {
+            var edit_Users = '@Url.Action("editUser", "OrgChartPositions")';
+            //var id_department = $('#departmentId').val();
+            var iduser = $('#dd_user').val();
+            var idshift = $('#dd_shift').val();
+
+            //var level = $('#level[1]').val();
+            $.ajax({
+                type: "POST",
+                url: edit_Users,
+                data: {
+                    idpositionuser: id_positionUser,
+                    userid: iduser,
+                    shiftid: idshift,
+                },
+                success: function (data) {
+
+                    if (data == 1) {
+
+                        $('#editUserModal').modal('hide');
+                        toastr.success("User modified!");
+                        //getPositionsChart(id_department);
+                        getuser(id_position, idrol);
+
+                    }
+
+
+
+
+                },
+                error: function (jqXHR, errorThrown) {
+
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+
+        }
+
+        function deleteUser(id_positionuser, idposition, idrol) {
+            var delete_Users = '@Url.Action("deleteUser", "OrgChartPositions")';
+
+            $.ajax({
+                type: "POST",
+                url: delete_Users,
+                data: {
+                    id: id_positionuser,
+                },
+                success: function (data) {
+
+                    if (data == 1) {
+
+                        $('#deleteUserModal').modal('hide');
+                        toastr.success("User deleted!");
+                        getuser(idposition, idrol);
+
+                    }
+
+                },
+                error: function (jqXHR, errorThrown) {
+
+                    console.log(load_position + " jqXHR: " + jqXHR);
+                    console.log("errorThrown: " + errorThrown);
+                }
+            });
+
+        }
+</script>
+}

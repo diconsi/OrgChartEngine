@@ -1,0 +1,29 @@
+﻿<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete Position in OrgChart</h4>
+    </div>
+    <div class="modal-body">
+        <h3>All sub roles will be removed. Are you sure you want to remove Role?</h3>
+        <div class="form-group row">
+            <label class="col-md-12 control-label">All the sub roles that this deploys will be eliminated.</label>
+            <label class="col-md-12">@ViewBag.TitlePosition</label>
+            <label class="col-md-12">@ViewBag.Line</label>
+            <label class="col-md-12">@ViewBag.Department</label>
+            <label class="col-md-12">@ViewBag.SuperiorPosition</label>
+        </div>
+        
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="btnSave" onclick="deletePosition(id_department=@ViewBag.IdDepartment, id=@ViewBag.Id)" class="btn buttonSave">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</div>
+
+<script>
+    $('.selectpicker').selectpicker();
+
+   
+</script>
+
